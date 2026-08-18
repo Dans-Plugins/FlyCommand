@@ -27,7 +27,7 @@ Type `/fly` to toggle your flight on or off. The plugin confirms the new state i
 
 ## Support
 
-You can find the support Discord server [here](https://discord.gg/xXtuAQ2).
+You can find the Dans Plugins Community Discord server [here](https://discord.gg/xXtuAQ2).
 
 ### Experiencing a bug?
 
@@ -67,6 +67,8 @@ jar cvf FlyCommand.jar -C out .
 ```
 
 `plugin.yml` must end up at the root of the jar, which is what the `cp` step above arranges.
+
+Compile at a release level your server's Java runtime can load — for example `--release 8` for a Minecraft 1.13 era Spigot server. A jar compiled by a newer JDK at its default release level will fail to load on an older runtime.
 
 ### Manual Validation on a Test Server
 
