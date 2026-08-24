@@ -17,6 +17,7 @@ public class Main extends JavaPlugin {
 		
 	}
 	
+	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		if (label.equalsIgnoreCase("fly")) {
 			if (!(sender instanceof Player)) {
@@ -32,6 +33,7 @@ public class Main extends JavaPlugin {
 				}
 				else {
 					player.sendMessage("Alert: Permission 'FlyCommand.fly' required.");
+					return true;
 				}
 			}
 		}

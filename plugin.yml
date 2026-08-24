@@ -5,3 +5,10 @@ api-version: 1.13
 
 commands:
   Fly:
+    description: Toggles flight mode on or off for the executing player.
+    usage: /<command>
+
+permissions:
+  FlyCommand.fly:
+    description: Allows the player to toggle flight.
+    default: op
