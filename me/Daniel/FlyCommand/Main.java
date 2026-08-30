@@ -28,7 +28,12 @@ public class Main extends JavaPlugin {
 				Player player = (Player) sender;
 				if (player.hasPermission("FlyCommand.fly")) {
 					player.setAllowFlight(!player.getAllowFlight());
-					player.sendMessage("Flight toggled to " + player.getAllowFlight());
+					if (player.getAllowFlight()) {
+						player.sendMessage("Flight enabled.");
+					}
+					else {
+						player.sendMessage("Flight disabled.");
+					}
 					return true;
 				}
 				else {
