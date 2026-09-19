@@ -1,0 +1,4 @@
+# Output of the manual build described in README.md
+out/
+*.jar
+*.class

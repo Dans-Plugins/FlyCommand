@@ -12,7 +12,12 @@ FlyCommand is a Spigot plugin that lets permitted players toggle flight mode on 
 
 ## Usage
 
-Type `/fly` to toggle your flight on or off. The plugin will confirm the new state in chat.
+Type `/fly` to toggle your flight on or off. The plugin will confirm the new state in chat with `Flight enabled.` or `Flight disabled.`
+
+`/fly` can only be used by a player:
+
+- Running it from the server console shows `Alert: Can't be used by console.` and does nothing else.
+- Running it as a player without the `FlyCommand.fly` permission shows `Alert: Permission 'FlyCommand.fly' required.` and leaves flight unchanged.
 
 ## Permissions
 

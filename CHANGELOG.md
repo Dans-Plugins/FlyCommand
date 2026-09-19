@@ -10,6 +10,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - `README.md` describing the plugin, its installation, its documentation, and how it is built and validated by hand.
 - `description` and `usage` metadata for the `Fly` command in `plugin.yml`.
 - A `permissions` block in `plugin.yml` declaring `FlyCommand.fly` with default `op`, matching the permission table in `USER_GUIDE.md`.
+- `USER_GUIDE.md`, `COMMANDS.md`, and the README's manual-validation steps now state the exact console and permission-denied alerts that `/fly` shows, alongside the two confirmation messages.
+- A `.gitignore` covering the `out/` directory, `.jar`, and `.class` files produced by the manual build described in `README.md`.
 
 ### Changed
 - The `/fly` confirmation message now reads `Flight enabled.` or `Flight disabled.` instead of `Flight toggled to true` or `Flight toggled to false`.

@@ -75,9 +75,9 @@ Compile at a release level your server's Java runtime can load — for example `
 1. Build `FlyCommand.jar` as above.
 2. Copy it into a Spigot or Paper server's `plugins` folder and start the server.
 3. Confirm the plugin loads and `/fly` is registered.
-4. Join as an operator and run `/fly` twice, confirming that flight is enabled and then disabled and that the chat confirmation matches the new state each time.
-5. Join with an account that is neither an operator nor a holder of `FlyCommand.fly` and run `/fly`, confirming the permission alert.
-6. Run `/fly` from the server console, confirming that the console alert is shown and that no error is logged.
+4. Join as an operator and run `/fly` twice, confirming that flight is enabled and then disabled and that the chat confirmation reads `Flight enabled.` and then `Flight disabled.`
+5. Join with an account that is neither an operator nor a holder of `FlyCommand.fly` and run `/fly`, confirming that `Alert: Permission 'FlyCommand.fly' required.` is shown and flight is unchanged.
+6. Run `/fly` from the server console, confirming that `Alert: Can't be used by console.` is shown and that no error is logged.
 
 ## Authors and Acknowledgement
 
