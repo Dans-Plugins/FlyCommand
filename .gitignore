@@ -1,4 +1,6 @@
-# Output of the manual build described in README.md
+# Maven build output
+target/
+# Output of a manual javac build
 out/
 *.jar
 *.class
