@@ -8,7 +8,7 @@ FlyCommand is a Spigot plugin that lets permitted players toggle flight mode on 
 
 ### First Time Installation
 
-1. Download the latest `FlyCommand.jar` from the [releases page](https://github.com/Dans-Plugins/FlyCommand/releases).
+1. Download the latest FlyCommand jar from the [releases page](https://github.com/Dans-Plugins/FlyCommand/releases).
 2. Place the jar in the `plugins` folder of your server.
 3. Restart your server.
 
@@ -41,38 +41,35 @@ Please open a bug report [here](https://github.com/Dans-Plugins/FlyCommand/issue
 
 ## Testing
 
-There is no test suite in this repository. No test framework is present, and no build system exists to host one.
+`mvn clean package` compiles the plugin and runs its test suite, which checks the `plugin.yml` packed into the jar: that `main` names the plugin class, that the build filled in the version, and that the `Fly` command and the `FlyCommand.fly` permission are declared. The [Build](.github/workflows/build.yml) workflow runs the same command on every push and pull request.
 
-The [Build](.github/workflows/build.yml) workflow checks the repository out and does nothing further, so a green check on a pull request confirms only that the repository could be cloned. It compiles nothing and runs nothing.
-
-Every change is therefore verified by hand on a Spigot or Paper server, as described under [Development](#development). Adding a build system and an automated test suite is tracked in [issue #9](https://github.com/Dans-Plugins/FlyCommand/issues/9).
+The `/fly` behaviour itself is still verified by hand on a Spigot or Paper server, as described under [Manual Validation](#manual-validation-on-a-test-server).
 
 ## Development
 
 ### Project Layout
 
-The plugin is a single class. The source tree is flat — the package path sits directly at the repository root rather than under `src/main/java`.
+The plugin is a single class, built with Maven.
 
-- `me/Daniel/FlyCommand/Main.java` – the whole plugin
-- `plugin.yml` – the plugin manifest, whose `main` value must stay equal to the package and class name of that file
+- `src/main/java/me/Daniel/FlyCommand/Main.java` – the whole plugin
+- `src/main/resources/plugin.yml` – the plugin manifest, whose `main` value must stay equal to the package and class name of that file; its `version` is filled in from `pom.xml` at build time
+- `src/test/java/` – tests of the packaged manifest
 
 ### Building
 
-No build tool is configured, so the jar is produced by hand against a Spigot API jar:
-
 ```bash
-javac -cp spigot-api.jar -d out me/Daniel/FlyCommand/Main.java
-cp plugin.yml out/
-jar cvf FlyCommand.jar -C out .
+mvn clean package
 ```
 
-`plugin.yml` must end up at the root of the jar, which is what the `cp` step above arranges.
+The jar is written to `target/FlyCommand-<version>.jar`. It is compiled for Java 8 (`maven.compiler.release` in `pom.xml`) so that it loads on the oldest servers its `api-version: 1.13` admits.
 
-Compile at a release level your server's Java runtime can load — for example `--release 8` for a Minecraft 1.13 era Spigot server. A jar compiled by a newer JDK at its default release level will fail to load on an older runtime.
+### Releases
+
+Every push to `main` that changes more than documentation republishes the rolling `dev` prerelease ([Dev Release](.github/workflows/dev-release.yml)). Stable releases are published from a verified `dev` build; a release published without a jar has one built and attached by [Release](.github/workflows/release.yml).
 
 ### Manual Validation on a Test Server
 
-1. Build `FlyCommand.jar` as above.
+1. Build the jar as above.
 2. Copy it into a Spigot or Paper server's `plugins` folder and start the server.
 3. Confirm the plugin loads and `/fly` is registered.
 4. Join as an operator and run `/fly` twice, confirming that flight toggles each time and that the chat confirmation reads `Flight enabled.` when flight is turned on and `Flight disabled.` when it is turned off.
@@ -101,4 +98,4 @@ See the [LICENSE](LICENSE) file for the full text of the GPL-3.0 license.
 
 ## Project Status
 
-The plugin is at version 1.0, as recorded in [CHANGELOG.md](CHANGELOG.md) and in `plugin.yml`. Open work is tracked on the [issues page](https://github.com/Dans-Plugins/FlyCommand/issues).
+The plugin has no stable release yet; its version is set in `pom.xml` and changes are recorded in [CHANGELOG.md](CHANGELOG.md). Open work is tracked on the [issues page](https://github.com/Dans-Plugins/FlyCommand/issues).

@@ -7,13 +7,13 @@ making any changes.
 ## Technology Stack
 
 - Language: Java
-- Build tool: None (manual compilation)
+- Build tool: Maven (`mvn clean package`, Java 8 bytecode)
 - Target platform: Spigot / Paper (Minecraft plugin)
 - API version: 1.13+
 
 ## Project Structure
 
-- `me/Daniel/FlyCommand/Main.java` – Plugin source code
+- `src/main/java/me/Daniel/FlyCommand/Main.java` – Plugin source code
 
 ## Contribution Workflow
 
