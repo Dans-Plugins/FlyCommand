@@ -79,8 +79,9 @@ class FlyCommandTest {
         assertEquals(Arrays.asList("Flight enabled.", "Flight disabled."), p.messages);
     }
 
+    /** Bukkit passes the label as typed, e.g. the plugin-prefixed fallback or a plugin.yml alias. */
     @Test
-    void pluginPrefixedLabelAndAliasesAlsoToggleFlight() throws Exception {
+    void otherLabelsForTheCommandAlsoToggleFlight() throws Exception {
         Main main = plugin();
         for (String label : new String[] { "flycommand:fly", "flight" }) {
             FakePlayer p = new FakePlayer(true);

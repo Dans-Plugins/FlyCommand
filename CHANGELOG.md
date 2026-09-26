@@ -18,7 +18,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - The `/fly` confirmation message now reads `Flight enabled.` or `Flight disabled.` instead of `Flight toggled to true` or `Flight toggled to false`.
 
 ### Fixed
-- `/fly` now checks the command's registered name rather than the label that was typed, so `/flycommand:fly` and aliases set up in the server's `commands.yml` toggle flight instead of printing the usage string (#13).
+- `/fly` now checks the command's registered name rather than the label that was typed, so `/flycommand:fly` toggles flight instead of printing the usage string (#13).
 - The permission-denied branch of `/fly` now returns `true`, so the plugin's own alert is the only message a player without `FlyCommand.fly` is shown.
 - `onCommand` now carries the `@Override` annotation, matching `onEnable` and `onDisable`.
 

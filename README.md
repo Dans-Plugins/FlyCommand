@@ -41,7 +41,7 @@ Please open a bug report [here](https://github.com/Dans-Plugins/FlyCommand/issue
 
 ## Testing
 
-`mvn clean package` compiles the plugin and runs its test suite. The suite checks the `plugin.yml` packed into the jar: that `main` names the plugin class, that the build filled in the version, and that the `Fly` command and the `FlyCommand.fly` permission are declared. It also runs the `/fly` handler against stand-in senders, checking the toggle and its confirmations (including when the command is typed as `/flycommand:fly` or under an alias), the permission-denied alert, and the console alert. The [Build](.github/workflows/build.yml) workflow runs the same command on every push and pull request.
+`mvn clean package` compiles the plugin and runs its test suite. The suite checks the `plugin.yml` packed into the jar: that `main` names the plugin class, that the build filled in the version, and that the `Fly` command and the `FlyCommand.fly` permission are declared. It also runs the `/fly` handler against stand-in senders, checking the toggle and its confirmations (including when the command is typed as `/flycommand:fly`), the permission-denied alert, and the console alert. The [Build](.github/workflows/build.yml) workflow runs the same command on every push and pull request.
 
 The tests do not start a server, so the plugin loading and `/fly` being registered are still verified by hand on a Spigot or Paper server, as described under [Manual Validation](#manual-validation-on-a-test-server).
 
