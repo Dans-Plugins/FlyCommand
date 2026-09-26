@@ -41,9 +41,9 @@ Please open a bug report [here](https://github.com/Dans-Plugins/FlyCommand/issue
 
 ## Testing
 
-`mvn clean package` compiles the plugin and runs its test suite, which checks the `plugin.yml` packed into the jar: that `main` names the plugin class, that the build filled in the version, and that the `Fly` command and the `FlyCommand.fly` permission are declared. The [Build](.github/workflows/build.yml) workflow runs the same command on every push and pull request.
+`mvn clean package` compiles the plugin and runs its test suite. The suite checks the `plugin.yml` packed into the jar: that `main` names the plugin class, that the build filled in the version, and that the `Fly` command and the `FlyCommand.fly` permission are declared. It also runs the `/fly` handler against stand-in senders, checking the toggle and its confirmations (including when the command is typed as `/flycommand:fly` or under an alias), the permission-denied alert, and the console alert. The [Build](.github/workflows/build.yml) workflow runs the same command on every push and pull request.
 
-The `/fly` behaviour itself is still verified by hand on a Spigot or Paper server, as described under [Manual Validation](#manual-validation-on-a-test-server).
+The tests do not start a server, so the plugin loading and `/fly` being registered are still verified by hand on a Spigot or Paper server, as described under [Manual Validation](#manual-validation-on-a-test-server).
 
 ## Development
 
@@ -53,7 +53,7 @@ The plugin is a single class, built with Maven.
 
 - `src/main/java/me/Daniel/FlyCommand/Main.java` – the whole plugin
 - `src/main/resources/plugin.yml` – the plugin manifest, whose `main` value must stay equal to the package and class name of that file; its `version` is filled in from `pom.xml` at build time
-- `src/test/java/` – tests of the packaged manifest
+- `src/test/java/` – tests of the packaged manifest and of the `/fly` handler
 
 ### Building
 
@@ -73,8 +73,9 @@ Every push to `main` that changes more than documentation republishes the rollin
 2. Copy it into a Spigot or Paper server's `plugins` folder and start the server.
 3. Confirm the plugin loads and `/fly` is registered.
 4. Join as an operator and run `/fly` twice, confirming that flight toggles each time and that the chat confirmation reads `Flight enabled.` when flight is turned on and `Flight disabled.` when it is turned off.
-5. Join with an account that is neither an operator nor a holder of `FlyCommand.fly` and run `/fly`, confirming that `Alert: Permission 'FlyCommand.fly' required.` is shown and flight is unchanged.
-6. Run `/fly` from the server console, confirming that `Alert: Can't be used by console.` is shown and that no error is logged.
+5. Run `/flycommand:fly`, confirming that it toggles flight exactly as `/fly` does.
+6. Join with an account that is neither an operator nor a holder of `FlyCommand.fly` and run `/fly`, confirming that `Alert: Permission 'FlyCommand.fly' required.` is shown and flight is unchanged.
+7. Run `/fly` from the server console, confirming that `Alert: Can't be used by console.` is shown and that no error is logged.
 
 ## Authors and Acknowledgement
 
