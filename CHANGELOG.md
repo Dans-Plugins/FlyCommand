@@ -12,7 +12,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - `description` and `usage` metadata for the `Fly` command in `plugin.yml`.
 - A `permissions` block in `plugin.yml` declaring `FlyCommand.fly` with default `op`, matching the permission table in `USER_GUIDE.md`.
 - `USER_GUIDE.md`, `COMMANDS.md`, and the README's manual-validation steps now state the exact console and permission-denied alerts that `/fly` shows, alongside the two confirmation messages.
-- A `.gitignore` covering the `out/` directory, `.jar`, and `.class` files produced by the manual build described in `README.md`.
+- A `.gitignore` covering Maven's `target/` directory and the `out/` directory, `.jar`, and `.class` files of a manual `javac` build.
+- `minecraft-versions.json`, declaring the supported Minecraft versions (1.19.4, 1.21.11 and 26.2); the `Build` workflow checks that the plugin only uses Bukkit API present on each of them, and the README and user guide list them (#19).
 
 ### Changed
 - The `/fly` confirmation message now reads `Flight enabled.` or `Flight disabled.` instead of `Flight toggled to true` or `Flight toggled to false`.
