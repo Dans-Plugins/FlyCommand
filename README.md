@@ -102,4 +102,4 @@ See the [LICENSE](LICENSE) file for the full text of the GPL-3.0 license.
 
 ## Project Status
 
-The plugin has no stable release yet; its version is set in `pom.xml` and changes are recorded in [CHANGELOG.md](CHANGELOG.md). Open work is tracked on the [issues page](https://github.com/Dans-Plugins/FlyCommand/issues).
+The latest stable release is [1.0.0](https://github.com/Dans-Plugins/FlyCommand/releases/tag/v1.0.0); the version under development is set in `pom.xml`, and changes are recorded in [CHANGELOG.md](CHANGELOG.md). Open work is tracked on the [issues page](https://github.com/Dans-Plugins/FlyCommand/issues).
