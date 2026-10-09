@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Added
+- Minecraft 26.3 in `minecraft-versions.json`, so the `Build` workflow's API check and the release boot check cover it; the README and user guide list it (#25).
+
 ## [1.0.0] - 2026-10-02
 
 ### Added
