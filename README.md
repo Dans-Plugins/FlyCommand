@@ -1,5 +1,9 @@
 # FlyCommand
 
+![/fly toggling flight on and off](docs/images/fly.png)
+
+*Real in-game output from FlyCommand 1.0.0 on a local throwaway Paper 1.21.11 test server: the commands were typed by a scripted bot client, and the chat it received is drawn as Minecraft-style chat (typed commands appear in the input bars; grey lines say what happened between commands).*
+
 ## Description
 
 FlyCommand is a Spigot plugin that lets permitted players toggle flight mode on and off with a single command. It adds one command, `/fly`, and nothing else — there is no configuration file and no persistent data.
