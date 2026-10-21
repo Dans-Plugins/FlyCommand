@@ -9,6 +9,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Added
 - Minecraft 26.3 in `minecraft-versions.json`, so the `Build` workflow's API check and the release boot check cover it; the README and user guide list it (#25).
 
+### Fixed
+- `COMMANDS.md` now lists the exact messages `/fly` shows, including the permission-denied and console alerts, which the 1.0.0 entry below said it already did.
+
 ## [1.0.0] - 2026-10-02
 
 ### Added
