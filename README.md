@@ -72,7 +72,7 @@ The jar is written to `target/FlyCommand-<version>.jar`. It is compiled for Java
 
 ### Releases
 
-Every push to `main` that changes more than documentation republishes the rolling `dev` prerelease ([Dev Release](.github/workflows/dev-release.yml)). Stable releases are published from a verified `dev` build; a release published without a jar has one built and attached by [Release](.github/workflows/release.yml).
+Every push to `main` that changes anything other than Markdown files or `LICENSE` republishes the rolling `dev` prerelease ([Dev Release](.github/workflows/dev-release.yml)). Stable releases are published from a verified `dev` build; a release published without a jar has one built and attached by [Release](.github/workflows/release.yml).
 
 ### Manual Validation on a Test Server
 
