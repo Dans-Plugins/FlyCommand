@@ -2,7 +2,7 @@
 
 | Command | Permission | Description |
 |---------|------------|-------------|
-| `/fly` | `FlyCommand.fly` | Toggles flight mode on or off for the executing player. Player-only; the console is rejected with an alert. |
+| `/fly` | `FlyCommand.fly` | Toggles flight mode on or off for the executing player. Player-only; the console is rejected with an alert. Also available as `/flycommand:fly`, which reaches FlyCommand even if another plugin provides `/fly`. |
 
 ## `/fly` messages
 
