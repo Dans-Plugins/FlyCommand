@@ -16,6 +16,8 @@ FlyCommand is supported on the Minecraft versions listed in [`minecraft-versions
 
 Type `/fly` to toggle your flight on or off. The plugin will confirm the new state in chat with `Flight enabled.` or `Flight disabled.`
 
+`/flycommand:fly` does exactly the same. If another plugin also provides a `/fly` command, the server may send `/fly` to that plugin instead; `/flycommand:fly` always reaches FlyCommand.
+
 `/fly` can only be used by a player:
 
 - Running it from the server console shows `Alert: Can't be used by console.` and does nothing else.
