@@ -20,7 +20,7 @@ Type `/fly` to toggle your flight on or off. The plugin will confirm the new sta
 
 `/fly` can only be used by a player:
 
-- Running it from the server console shows `Alert: Can't be used by console.` and does nothing else.
+- Running it from the server console, or from anything else that is not a player, such as a command block, shows `Alert: Can't be used by console.` and does nothing else.
 - Running it as a player without the `FlyCommand.fly` permission shows `Alert: Permission 'FlyCommand.fly' required.` and leaves flight unchanged.
 
 ## Permissions
