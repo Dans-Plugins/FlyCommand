@@ -9,7 +9,7 @@
 FlyCommand is a Spigot plugin that lets permitted players toggle flight mode on and off with a single command. It adds one command, `/fly`, and nothing else — there is no configuration file and no persistent data.
 
 ## Supported Minecraft Versions
-This plugin is supported on the Minecraft versions listed in [`minecraft-versions.json`](minecraft-versions.json): currently **1.19.4**, **1.21.11**, **26.2** and **26.3** (Spigot and its forks). Every stable release is booted on a real server of each of these versions before it is published, and every build checks that the plugin only uses Bukkit API that exists on all of them. Other versions from 1.19.4 onwards are expected to work but are not tested. To support another version, add it to the file: both checks pick it up.
+This plugin is supported on the Minecraft versions listed in [`minecraft-versions.json`](minecraft-versions.json): currently **1.19.4**, **1.21.11**, **26.2** and **26.3** (Spigot and its forks). Every stable release is booted on a real server of each of these versions before it is published, and the [Build](.github/workflows/build.yml) workflow checks that the plugin only uses Bukkit API that exists on all of them. Other versions from 1.19.4 onwards are expected to work but are not tested. To support another version, add it to the file: both checks pick it up.
 
 ## Installation
 
@@ -48,7 +48,7 @@ Please open a bug report [here](https://github.com/Dans-Plugins/FlyCommand/issue
 
 ## Testing
 
-`mvn clean package` compiles the plugin and runs its test suite. The suite checks the `plugin.yml` packed into the jar: that `main` names the plugin class, that the build filled in the version, and that the `Fly` command and the `FlyCommand.fly` permission are declared. It also runs the `/fly` handler against stand-in senders, checking the toggle and its confirmations (including when the command is typed as `/flycommand:fly`), the permission-denied alert, and the console alert. The [Build](.github/workflows/build.yml) workflow runs the same command on every push and pull request.
+`mvn clean package` compiles the plugin and runs its test suite. The suite checks the `plugin.yml` packed into the jar: that `main` names the plugin class, that the build filled in the version, and that the `Fly` command and the `FlyCommand.fly` permission are declared. It also runs the `/fly` handler against stand-in senders, checking the toggle and its confirmations (including when the command is typed as `/flycommand:fly`), the permission-denied alert, and the console alert. The [Build](.github/workflows/build.yml) workflow runs the same command on every push to `main` and every pull request against it, then the Bukkit API check described under [Supported Minecraft Versions](#supported-minecraft-versions), which `mvn clean package` does not run.
 
 The tests do not start a server, so the plugin loading and `/fly` being registered are still verified by hand on a Spigot or Paper server, as described under [Manual Validation](#manual-validation-on-a-test-server).
 
@@ -72,7 +72,7 @@ The jar is written to `target/FlyCommand-<version>.jar`. It is compiled for Java
 
 ### Releases
 
-Every push to `main` that changes anything other than Markdown files or `LICENSE` republishes the rolling `dev` prerelease ([Dev Release](.github/workflows/dev-release.yml)). Stable releases are published from a verified `dev` build; a release published without a jar has one built and attached by [Release](.github/workflows/release.yml).
+Every push to `main` that changes anything other than Markdown files or `LICENSE` republishes the rolling `dev` prerelease ([Dev Release](.github/workflows/dev-release.yml)); the workflow can also be run by hand, which republishes `dev` from whatever commit it is run on. Stable releases are published from a verified `dev` build; a release published without a jar has one built and attached by [Release](.github/workflows/release.yml).
 
 ### Manual Validation on a Test Server
 
