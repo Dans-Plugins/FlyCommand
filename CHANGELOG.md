@@ -13,6 +13,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Fixed
 - `COMMANDS.md` now lists the exact messages `/fly` shows, including the permission-denied and console alerts, which the 1.0.0 entry below said it already did.
 - `USER_GUIDE.md` and `COMMANDS.md` now say that the console alert is shown to any non-player sender, such as a command block, not only the server console.
+- The README and user guide now say that 1.0.0 was not booted on Minecraft 26.3, which was added after that release.
+- The README's hero image caption no longer mentions grey lines the image does not have.
+- The README now says which JDK a build needs, and that a new supported version also goes in the README and user guide lists.
 
 ## [1.0.0] - 2026-10-02
 

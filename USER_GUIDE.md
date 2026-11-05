@@ -10,7 +10,7 @@ FlyCommand is a Spigot plugin that lets permitted players toggle flight mode on 
 2. Place the JAR in your server's `plugins/` folder.
 3. Restart the server.
 
-FlyCommand is supported on the Minecraft versions listed in [`minecraft-versions.json`](minecraft-versions.json): currently **1.19.4**, **1.21.11**, **26.2** and **26.3** (Spigot and its forks).
+FlyCommand is supported on the Minecraft versions listed in [`minecraft-versions.json`](minecraft-versions.json): currently **1.19.4**, **1.21.11**, **26.2** and **26.3** (Spigot and its forks). 26.3 was added after the 1.0.0 release, so 1.0.0 was not booted on it; the next stable release will be.
 
 ## Usage
 

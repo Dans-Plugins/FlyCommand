@@ -2,14 +2,14 @@
 
 ![/fly toggling flight on and off](docs/images/fly.png)
 
-*Real in-game output from FlyCommand 1.0.0 on a local throwaway Paper 1.21.11 test server: the commands were typed by a scripted bot client, and the chat it received is drawn as Minecraft-style chat (typed commands appear in the input bars; grey lines say what happened between commands).*
+*Real in-game output from FlyCommand 1.0.0 on a local throwaway Paper 1.21.11 test server: the commands were typed by a scripted bot client, and the chat it received is drawn as Minecraft-style chat (typed commands appear in the input bars).*
 
 ## Description
 
 FlyCommand is a Spigot plugin that lets permitted players toggle flight mode on and off with a single command. It adds one command, `/fly`, and nothing else — there is no configuration file and no persistent data.
 
 ## Supported Minecraft Versions
-This plugin is supported on the Minecraft versions listed in [`minecraft-versions.json`](minecraft-versions.json): currently **1.19.4**, **1.21.11**, **26.2** and **26.3** (Spigot and its forks). Every stable release is booted on a real server of each of these versions before it is published, and the [Build](.github/workflows/build.yml) workflow checks that the plugin only uses Bukkit API that exists on all of them. Other versions from 1.19.4 onwards are expected to work but are not tested. To support another version, add it to the file: both checks pick it up.
+This plugin is supported on the Minecraft versions listed in [`minecraft-versions.json`](minecraft-versions.json): currently **1.19.4**, **1.21.11**, **26.2** and **26.3** (Spigot and its forks). Every stable release is booted on a real server of each of these versions before it is published, and the [Build](.github/workflows/build.yml) workflow checks that the plugin only uses Bukkit API that exists on all of them. 26.3 was added after the 1.0.0 release, so 1.0.0 was not booted on it; the next stable release will be. Other versions from 1.19.4 onwards are expected to work but are not tested. To support another version, add it to the file, which both checks read, and to the lists here and in the [User Guide](USER_GUIDE.md#installation).
 
 ## Installation
 
@@ -63,6 +63,8 @@ The plugin is a single class, built with Maven.
 - `src/test/java/` – tests of the packaged manifest and of the `/fly` handler
 
 ### Building
+
+Building needs Maven and a JDK; the workflows use JDK 17. JDK 8 is too old even though the jar targets Java 8, because `maven.compiler.release` needs JDK 9 or later.
 
 ```bash
 mvn clean package
