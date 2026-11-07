@@ -48,7 +48,7 @@ Please open a bug report [here](https://github.com/Dans-Plugins/FlyCommand/issue
 
 ## Testing
 
-`mvn clean package` compiles the plugin and runs its test suite. The suite reads the `plugin.yml` packed into the jar with Bukkit's `PluginDescriptionFile`, the parser a server uses, and checks that `main` names the plugin class, that the build filled in the version, that the name and `api-version` are `FlyCommand` and `1.13`, and that the `Fly` command is declared. The `op` default of the `FlyCommand.fly` permission is read as plain YAML instead, because that parser needs a running server to build a permission. The suite also runs the `/fly` handler against stand-in senders, checking the toggle and its confirmations (including when the command is typed as `/flycommand:fly`), the permission-denied alert, and the console alert. The [Build](.github/workflows/build.yml) workflow runs the same command on every push to `main` and every pull request against it, then the Bukkit API check described under [Supported Minecraft Versions](#supported-minecraft-versions), which `mvn clean package` does not run.
+`mvn clean package` compiles the plugin and runs its test suite. The suite reads the `plugin.yml` the build has prepared for the jar with Bukkit's `PluginDescriptionFile`, the parser a server uses, and checks that `main` names the plugin class, that the build filled in the version, that the name and `api-version` are `FlyCommand` and `1.13`, and that the `Fly` command is declared. The `op` default of the `FlyCommand.fly` permission is read as plain YAML instead, because that parser needs a running server to build a permission. The suite also runs the `/fly` handler against stand-in senders, checking the toggle and its confirmations (including when the command is typed as `/flycommand:fly`), the permission-denied alert, and the console alert. Finally, it compares the docs with what they copy: the version lists here and in the [User Guide](USER_GUIDE.md) must match `minecraft-versions.json`, every message in `Main.java` must be quoted in this file, the user guide and the [Commands Reference](COMMANDS.md), and the permission `Main.java` checks must appear in the user guide's table with its `plugin.yml` default, and in the Commands Reference and the [Configuration Guide](CONFIG.md). The [Build](.github/workflows/build.yml) workflow runs the same command on every push to `main` and every pull request against it, then the Bukkit API check described under [Supported Minecraft Versions](#supported-minecraft-versions), which `mvn clean package` does not run.
 
 The tests do not start a server, so the plugin loading and `/fly` being registered are still verified by hand on a Spigot or Paper server, as described under [Manual Validation](#manual-validation-on-a-test-server).
 
@@ -60,7 +60,7 @@ The plugin is a single class, built with Maven.
 
 - `src/main/java/me/Daniel/FlyCommand/Main.java` – the whole plugin
 - `src/main/resources/plugin.yml` – the plugin manifest, whose `main` value must stay equal to the package and class name of that file; its `version` is filled in from `pom.xml` at build time
-- `src/test/java/` – tests of the packaged manifest and of the `/fly` handler
+- `src/test/java/` – tests of the packaged manifest, of the `/fly` handler, and of the docs against their sources
 
 ### Building
 
