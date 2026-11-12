@@ -10,6 +10,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Minecraft 26.3 in `minecraft-versions.json`, so the `Build` workflow's API check and the release boot check cover it; the README and user guide list it (#25).
 - `USER_GUIDE.md` and `COMMANDS.md` now say that `/flycommand:fly` works like `/fly` and reaches FlyCommand even when another plugin provides `/fly`.
 - Tests that fail the build when the docs' version lists, `/fly` messages or `FlyCommand.fly` permission details disagree with `minecraft-versions.json`, `Main.java` or `plugin.yml`.
+- An image of real in-game `/fly` output at the top of the README (#29).
+- `CONTRIBUTING.md` now asks contributors to run `mvn clean package` before opening a pull request, and to follow the README's manual validation steps on a test server when they change how `/fly` behaves (#28).
+- `CONFIG.md` now says who may use `/fly`: operators by default, and anyone granted `FlyCommand.fly` through a permissions plugin (#34).
+
+### Changed
+- The tests now read the packaged `plugin.yml` with Bukkit's `PluginDescriptionFile`, the parser a server uses, and also check the plugin name and `api-version` (#41).
 
 ### Fixed
 - `COMMANDS.md` now lists the exact messages `/fly` shows, including the permission-denied and console alerts, which the 1.0.0 entry below said it already did.
@@ -17,6 +23,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - The README and user guide now say that 1.0.0 was not booted on Minecraft 26.3, which was added after that release.
 - The README's hero image caption no longer mentions grey lines the image does not have.
 - The README now says which JDK a build needs, and that a new supported version also goes in the README and user guide lists.
+- The README's Releases section now says exactly which pushes republish the `dev` prerelease: any that change something other than Markdown files or `LICENSE` (#33).
 
 ## [1.0.0] - 2026-10-02
 
