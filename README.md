@@ -61,6 +61,7 @@ The plugin is a single class, built with Maven.
 - `src/main/java/me/Daniel/FlyCommand/Main.java` – the whole plugin
 - `src/main/resources/plugin.yml` – the plugin manifest, whose `main` value must stay equal to the package and class name of that file; its `version` is filled in from `pom.xml` at build time
 - `src/test/java/` – tests of the packaged manifest, of the `/fly` handler, and of the docs against their sources
+- `minecraft-versions.json` – the supported Minecraft versions, read by the [Build](.github/workflows/build.yml) workflow's Bukkit API check and by the tests that compare the version lists in the docs with it
 
 ### Building
 
