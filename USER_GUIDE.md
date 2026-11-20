@@ -6,7 +6,7 @@ FlyCommand is a Spigot plugin that lets permitted players toggle flight mode on 
 
 ## Installation
 
-1. Download the FlyCommand jar from the [latest stable release](https://github.com/Dans-Plugins/FlyCommand/releases/latest). The "Development build" prerelease at the top of the releases page is unreleased, unreviewed code that has not been through any release check; do not install it on a server you care about.
+1. Download the FlyCommand jar from the [latest stable release](https://github.com/Dans-Plugins/FlyCommand/releases/latest). The "Development build" prerelease on the releases page is unreleased, unreviewed code that has not been through any release check; do not install it on a server you care about.
 2. Place the JAR in your server's `plugins/` folder.
 3. Restart the server.
 
