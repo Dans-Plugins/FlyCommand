@@ -25,6 +25,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - The README now says which JDK a build needs, and that a new supported version also goes in the README and user guide lists.
 - The README's Releases section now says exactly which pushes republish the `dev` prerelease: any that change something other than Markdown files or `LICENSE` (#33).
 - The README's Project Layout now lists `minecraft-versions.json`, the file its Supported Minecraft Versions section tells contributors to edit.
+- The installation steps in the README and user guide now link to the latest stable release rather than the releases page, where the newest jar is the `dev` prerelease (#47).
 
 ## [1.0.0] - 2026-10-02
 
