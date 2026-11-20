@@ -15,7 +15,7 @@ This plugin is supported on the Minecraft versions listed in [`minecraft-version
 
 ### First Time Installation
 
-1. Download the latest FlyCommand jar from the [releases page](https://github.com/Dans-Plugins/FlyCommand/releases).
+1. Download the FlyCommand jar from the [latest stable release](https://github.com/Dans-Plugins/FlyCommand/releases/latest). The "Development build" prerelease at the top of the releases page is not a stable release (see [Releases](#releases)).
 2. Place the jar in the `plugins` folder of your server.
 3. Restart your server.
 
